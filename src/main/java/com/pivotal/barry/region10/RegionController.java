@@ -28,15 +28,28 @@ public class RegionController {
 	}
 	
 	@RequestMapping("/findByFacilityAndAppOption/{facility}/{appoption}")
-	  public List<Region10> findByFacilityAndAppOption(@PathVariable("facility") String facility,
+	  public Iterable<Region10> findByFacilityAndAppOption(@PathVariable("facility") String facility,
 			  @PathVariable("appoption") String appOption) {
 		  
-		  List<Region10> objs = region10s.findByFacilityIdAndAppOption(facility, appOption);
-//		  System.out.println(objs);
-//		  for (Object o : objs) {
-//			  System.out.println("Object:"+o);
-//			  System.out.println( JSONFormatter.toJSON((PdxInstance) o).toString());
-//		  }
+		System.out.println("facility"+facility+"option"+appOption);
+		  Iterable<Region10> objs = region10s.findByFacilityIdAndAppOption(facility, appOption);
+		  System.out.println(objs);
 		  return objs;
 	  }
+	
+//	@RequestMapping("/findByFacilityId/{facilityId}")
+//	  public Region10 findByFacilityId(@PathVariable("facilityId") String facilityId) {
+//		  
+//		System.out.println("facility"+facilityId);
+//		  Region10 obj = region10s.findByFacilityIdLike(facilityId);
+//		  return obj;
+//	  }
+//	@RequestMapping("/findByValue/{value}")
+//	  public Region10 findByValue(@PathVariable("value") String value) {
+//		  
+//		System.out.println("value"+value);
+//		  Region10 obj = region10s.findByValueLike(value);
+//		System.out.println(obj.toString());
+//		  return obj;
+//	  }
 }

@@ -1,44 +1,29 @@
 package com.pivotal.barry.region10;
 
-import java.io.Serializable;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.gemfire.mapping.annotation.Region;
 
-@Region("Region10")
-public class Region10 implements Serializable { 
-	
-	@Id
-	private CompoundKey key;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.Setter;
 
-	public CompoundKey getKey() {
-		return key;
-	}
+@Region("Region10")
+public class Region10 { 
+	
+	@Id @NonNull @Getter
+	private CompoundKey key;
 
 	public void setKey(CompoundKey key) {
 		this.key = key;
-		this.setFacilityId(key.getFacilityId());
-		this.setAppOption(key.getAppOption());
+		this.facilityId = (key.getFacilityId());
+		this.appOption = (key.getAppOption());
 	}
 
+	@Getter @Setter
 	private String value;
-	public String getFacilityId() {
-		return facilityId;
-	}
-
-	public void setFacilityId(String facilityId) {
-		this.facilityId = facilityId;
-	}
-
-	public String getAppOption() {
-		return appOption;
-	}
-
-	public void setAppOption(String appOption) {
-		this.appOption = appOption;
-	}
-
+	@Getter @Setter
 	private String facilityId;
+	@Getter @Setter
 	private String appOption;
 
 	public Region10() {
@@ -46,17 +31,9 @@ public class Region10 implements Serializable {
 	
 	public Region10(CompoundKey key, String value) {
 		super();
-		this.setKey(key);
-		this.setValue(value);
-//		this.setFacilityId(key.getFacilityId());
-//		this.setAppOption(key.getAppOption());
-	}
-
-	public String getValue() {
-		return value;
-	}
-
-	public void setValue(String value) {
-		this.value = value;
+		this.key=(key);
+		this.value=(value);
+		this.appOption=key.getAppOption();
+		this.facilityId=key.getFacilityId();
 	}
 }

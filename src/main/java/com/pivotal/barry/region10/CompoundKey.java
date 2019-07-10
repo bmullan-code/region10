@@ -1,8 +1,6 @@
 package com.pivotal.barry.region10;
 
-import java.io.Serializable;
-
-public class CompoundKey implements Serializable {
+public class CompoundKey {
 
 	private String appOption;
 	private String facilityId;
