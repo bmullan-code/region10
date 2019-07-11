@@ -37,12 +37,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-<!--  		<dependency>
+  		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-data-gemfire</artifactId>
 		    <version>1.5.21.RELEASE</version>
 		</dependency>
- --> 		<dependency>
+ 		<dependency>
 		  <groupId>org.springframework.geode</groupId>
 		  <artifactId>spring-geode-starter</artifactId>
 		  <version>1.0.1.RELEASE</version>
